@@ -50,3 +50,6 @@ Once you've completed your assignment, record a short video (~5 minutes) that in
 - [ ] a quick demonstration that your codes works,
 - [ ] the GitHub project repository with all commits,
 - [ ] explanation of how your code uses encapsulation
+
+Add the link to your video here:
+
