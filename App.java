@@ -12,10 +12,10 @@ public class App {
       for (int i = 0; i < 3; i++) {
         System.out.println("\nAn enemy approaches! \n");
         //Creates another Character object, this time for the enemy
-        Character enemy1 = new Character();
-         System.out.println(enemy1 + " is the current enemy health!");
+        Enemy enemy1 = new Enemy();
+         System.out.println(enemy1.getHealth() + " is the current enemy health!");
       // As long as the enemy's health is above 0, the following code will run
-      while(enemy1.health > 0){
+      while(enemy1.getHealth() > 0){
       String directions = "\nYour options: Attack, Heal, Defend \nType in your move!";
       System.out.println(directions);
       String move = scanner.nextLine();
@@ -31,14 +31,14 @@ public class App {
       //If the player attacks, it will do a randomized amount of damage to the enemy (between 3 and 7)
       if (move.equals("Attack")){
         int attack = (int)Math.random() * (7 - 4) + 3;
-        enemy1.health = enemy1.health - attack;
+        enemy1.setHealth(enemy1.getHealth() - attack);  
         System.out.println("\nThe enemy took " + attack + " damage!");
-        if (enemy1.health > 0){
-          System.out.println(enemy1 + " is the current enemy health!");
+        if (enemy1.getHealth() > 0){
+          System.out.println(enemy1.getHealth() + " is the current enemy health!");
           //Runs the methods for attacking the player and prints out the current player and enemy health in hearts
-          System.out.println("\n" + name + " now has " + player1.enemyAttack() + " hearts after taking " + player1.damage + " damage!");
+          System.out.println("\n" + name + " now has " + player1.enemyAttack() + " hearts after taking " + player1.getDamage() + " damage!");
           //If the player dies, it terminates the code and tells you to restart to try it again
-          if (player1.health <= 0){
+          if (player1.getHealth() <= 0){
             System.out.println("\n" + name + " has died! Please restart the code to try again!");
             System.exit(0);
           }
@@ -53,14 +53,14 @@ public class App {
       else if (move.equals("Heal")){
         //Heals a random amount of health for the player, between 5 and 12 hearts
         int heal = (int)Math.random() * (12 - 6) + 5;
-        player1.health = player1.health + heal;
+        player1.setHealth(player1.getHealth() + heal);  
         System.out.println(name + " Healed 5 hearts!\n");
         System.out.println(player1 + " is your current health!");
-        if (enemy1.health > 0){
-          System.out.println(enemy1 + " is the current enemy health!");
+        if (enemy1.getHealth() > 0){
+          System.out.println(enemy1.getHealth() + " is the current enemy health!");
 
-          System.out.println("\n" + name + " now has " + player1.enemyAttack() + " hearts after taking " + player1.damage + " damage!");
-          if (player1.health <= 0){
+          System.out.println("\n" + name + " now has " + player1.enemyAttack() + " hearts after taking " + player1.getDamage() + " damage!");
+          if (player1.getHealth() <= 0){
             System.out.println("\n" + name + " has died! Please restart the code to try again!");
             System.exit(0);
           }
@@ -73,11 +73,11 @@ public class App {
       else if (move.equals("Defend")){
         //Assigns the isDefending Boolean value to true, which prompts the code in the enemyAttack method (in the Character class) to do less damage
         player1.isDefending = true;
-        if (enemy1.health > 0){
-          System.out.println(enemy1 + " is the current enemy health!");
+        if (enemy1.getHealth() > 0){
+          System.out.println(enemy1.getHealth() + " is the current enemy health!");
 
-          System.out.println("\n" + name + " now has " + player1.enemyAttack() + " hearts after taking " + player1.damage + " damage!");
-          if (player1.health <= 0){
+          System.out.println("\n" + name + " now has " + player1.enemyAttack() + " hearts after taking " + player1.getDamage() + " damage!");
+          if (player1.getHealth() <= 0){
             System.out.println("\n" + name + " has died! Please restart the code to try again!");
             System.exit(0);
           }
@@ -96,18 +96,3 @@ System.exit(0);
 
       
 }
-
-
-
-
-
-
-/* CHECKLIST FOR REQUIREMENTS
-if statements DONE
-if-else statements DONE
-else if statements DONE
-compound boolean expressions DONE
-comparing objects DONE
-while loop DONE
-for loop DONE
-nested iteration DONE */

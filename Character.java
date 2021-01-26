@@ -4,9 +4,9 @@ import java.util.Scanner;
 // Class to create the health and damage for both the playable character and enemy
 
 public class Character{
-        int health = 0;
-        String name;
-        int damage = 0;
+        private int health = 0;
+        private String name = "";
+        private int damage = 0;
         Boolean isDefending = false;
 
         Scanner scanner = new Scanner(System.in);
@@ -36,7 +36,15 @@ public class Character{
           
         }
 
-        public int damageDone(){
+        public int getHealth(){
+          return health;
+        }
+
+         public void setHealth(int newHealth){
+          health = newHealth;
+        }
+
+        public int getDamage(){
           return damage;
         }
 
