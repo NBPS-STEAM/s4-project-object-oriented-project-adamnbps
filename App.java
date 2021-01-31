@@ -46,6 +46,10 @@ public class App {
         else{
           //Only prints if the enemy's health is equal to or less than 0
           System.out.println("The enemy is dead! GG");
+          if(Enemy.getTotalEnemies() == 1){
+            System.out.println(Enemy.getTotalEnemies() + " enemy defeated!");
+          }
+          else System.out.println(Enemy.getTotalEnemies() + " total enemies defeated!");
         }
         
         
@@ -67,6 +71,10 @@ public class App {
         }
         else{
           System.out.println("The enemy is dead! GG");
+          if(Enemy.getTotalEnemies() == 1){
+            System.out.println(Enemy.getTotalEnemies() + " enemy defeated!");
+          }
+          else System.out.println(Enemy.getTotalEnemies() + " total enemies defeated!");
         }
       }
 
@@ -81,10 +89,15 @@ public class App {
             System.out.println("\n" + name + " has died! Please restart the code to try again!");
             System.exit(0);
           }
-        }
-        else{
+          else{
           System.out.println("The enemy is dead! GG");
+          if(Enemy.getTotalEnemies() == 1){
+            System.out.println(Enemy.getTotalEnemies() + " enemy defeated!");
+          }
+          else System.out.println(Enemy.getTotalEnemies() + " total enemies defeated!");
         }
+        }
+        
       }
 
     }

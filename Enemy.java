@@ -5,15 +5,21 @@ import java.lang.Math;
 public class Enemy{
         private int health = 0;
         private int damage = 0;
+        private static int totalEnemies = 0;
 
         //Randomizes the health for enemies, making sure that it is a different experience each time
         public Enemy(){
           health = (int)(Math.random() * (15 - 9) + 8);
+          totalEnemies++;
         }
-        //Method used to determine the amount of damage done by an enemy
 
+        //Appropriate getter and setter methods for the class 
         public int getHealth(){
           return health;
+        }
+
+        public static int getTotalEnemies(){
+          return totalEnemies;
         }
 
         public void setHealth(int newHealth){

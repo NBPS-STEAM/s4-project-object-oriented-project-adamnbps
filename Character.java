@@ -15,10 +15,27 @@ public class Character{
         health = 20;
         name = theName;
         } 
-        //Randomizes the health for enemies, making sure that it is a different experience each time
+        
+        //Randomizes the health for your character and adds a default name, making sure that it is a different experience each time
         public Character(){
-          health = (int)(Math.random() * (15 - 9) + 8);
+          health = (int)(Math.random() * (20 - 15) + 8);
+          name = "Joe";
         }
+        
+        //Appropriate getter and setter methods for the class
+        
+        public int getHealth(){
+          return health;
+        }
+
+         public void setHealth(int newHealth){
+          health = newHealth;
+        }
+
+        public int getDamage(){
+          return damage;
+        }
+
         //Method used to determine the amount of damage done by an enemy
         public int enemyAttack(){
           if (isDefending == true){
@@ -36,21 +53,8 @@ public class Character{
           
         }
 
-        public int getHealth(){
-          return health;
-        }
-
-         public void setHealth(int newHealth){
-          health = newHealth;
-        }
-
-        public int getDamage(){
-          return damage;
-        }
-
         public String toString()
     {
         return health + "";
     }
     }
-  
