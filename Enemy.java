@@ -5,6 +5,7 @@ import java.lang.Math;
 public class Enemy{
         private int health = 0;
         private int damage = 0;
+        //Static variable to store the amount of enemies defeated
         private static int totalEnemies = 0;
 
         //Randomizes the health for enemies, making sure that it is a different experience each time
@@ -17,17 +18,18 @@ public class Enemy{
         public int getHealth(){
           return health;
         }
-
-        public static int getTotalEnemies(){
-          return totalEnemies;
-        }
-
+        
         public void setHealth(int newHealth){
           health = newHealth;
         }
 
         public int getDamage(){
           return damage;
+        }
+
+        //Static method to print the amount of enemies defeated
+        public static int getTotalEnemies(){
+          return totalEnemies;
         }
 
         public String toString()
