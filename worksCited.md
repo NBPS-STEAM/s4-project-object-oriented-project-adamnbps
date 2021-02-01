@@ -14,5 +14,6 @@ There are TONS of online tutorials on how to code many simple and sophisticated 
 
 When making a citation, include the resource title, URL, and date of access. Use the following format to make your citations:
 
-[Java If ... Else](https://www.w3schools.com/java/java_conditions.asp)
-Date accessed: Jan 20, 2021
+
+[Java Documentation - CodeHS](https://codehs.com/editor/documentation/java)
+Date accessed: Jan 28, 2021
