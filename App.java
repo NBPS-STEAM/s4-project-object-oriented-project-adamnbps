@@ -8,11 +8,14 @@ public class App {
         //Creates a Character object, player1, with the provided name
          Character player1 = new Character(name);
 
+        Enemy[] enemies = {new Enemy(),new Enemy(),new Enemy(),new Enemy(30)};
+
       //Runs the battle code exactly 3 times (so the player encounters 3 enemies)
-      for (int i = 0; i < 3; i++) {
+      for (int i = 0; i < enemies.length; i++) {
         System.out.println("\nAn enemy approaches! \n");
         //Creates another Character object, this time for the enemy
-        Enemy enemy1 = new Enemy();
+        if (i == enemies.length - 1) System.out.println("\nYou killed 3 enemies! Time for a boss! \n");
+        Enemy enemy1 = enemies[i];
          System.out.println(enemy1.getHealth() + " is the current enemy health!");
       // As long as the enemy's health is above 0, the following code will run
       while(enemy1.getHealth() > 0){
@@ -46,10 +49,8 @@ public class App {
         else{
           //Only prints if the enemy's health is equal to or less than 0
           System.out.println("The enemy is dead! GG");
-          if(Enemy.getTotalEnemies() == 1){
-            System.out.println(Enemy.getTotalEnemies() + " enemy defeated!");
-          }
-          else System.out.println(Enemy.getTotalEnemies() + " total enemies defeated!");
+          Enemy.enemyKilled();
+          System.out.println(Enemy.getKilled() + " of " + Enemy.getTotalEnemies() + " total enemies defeated!");
         }
         
         
@@ -71,10 +72,8 @@ public class App {
         }
         else{
           System.out.println("The enemy is dead! GG");
-          if(Enemy.getTotalEnemies() == 1){
-            System.out.println(Enemy.getTotalEnemies() + " enemy defeated!");
-          }
-          else System.out.println(Enemy.getTotalEnemies() + " total enemies defeated!");
+          Enemy.enemyKilled();
+          System.out.println(Enemy.getKilled() + " of " + Enemy.getTotalEnemies() + " total enemies defeated!");
         }
       }
 
@@ -91,10 +90,8 @@ public class App {
           }
           else{
           System.out.println("The enemy is dead! GG");
-          if(Enemy.getTotalEnemies() == 1){
-            System.out.println(Enemy.getTotalEnemies() + " enemy defeated!");
-          }
-          else System.out.println(Enemy.getTotalEnemies() + " total enemies defeated!");
+          Enemy.enemyKilled();
+          System.out.println(Enemy.getKilled() + " of " + Enemy.getTotalEnemies() + " total enemies defeated!");
         }
         }
         
@@ -102,8 +99,7 @@ public class App {
 
     }
 }      
-//Only prints once the player defeats exactly 3 enemies
-System.out.println("You just beat 3 enemies and won the game! Play again!");
+
 System.exit(0);
 }
 
